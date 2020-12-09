@@ -77,6 +77,11 @@ class App extends React.Component{
                 this.setState({
                     currentMoney: this.state.currentMoney + 1
                 });
+                if(this.state.currentMoney == 10){
+                    this.setState({
+                        currentMoney: 9
+                    })
+                }
                 this.getQuestion();
             break;
             case "Incorrect":
