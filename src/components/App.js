@@ -44,7 +44,7 @@ class App extends React.Component{
         var qData;
         var cats = ["9"];
         var chosenCat = cats[Math.floor(Math.random() * cats.length)];
-        fetch("https://opentdb.com/api.php?amount=1&type=multiple").then(res => res.json()).then((jsonData) => {
+        fetch("https://opentdb.com/api.php?amount=1&type=multiple&category="+chosenCat).then(res => res.json()).then((jsonData) => {
             qData = jsonData.results[0];
             var incorrectAnswers = qData.incorrect_answers.map(e=>this.decode(e));
             var allAnswers = incorrectAnswers;
