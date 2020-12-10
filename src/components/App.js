@@ -11,7 +11,7 @@ class App extends React.Component{
         question: "",
         correctAnswer: "",
         bankAmount: 0,
-        currentMoney: 1,
+        currentMoney: 0,
         timeOnTimer: "180",
         roundTime: 180,
         answers: "",
@@ -44,7 +44,7 @@ class App extends React.Component{
         var qData;
         var cats = ["9"];
         var chosenCat = cats[Math.floor(Math.random() * cats.length)];
-        fetch("https://opentdb.com/api.php?amount=1&type=multiple&category="+chosenCat).then(res => res.json()).then((jsonData) => {
+        fetch("https://opentdb.com/api.php?amount=1&type=multiple").then(res => res.json()).then((jsonData) => {
             qData = jsonData.results[0];
             var incorrectAnswers = qData.incorrect_answers.map(e=>this.decode(e));
             var allAnswers = incorrectAnswers;
@@ -77,16 +77,16 @@ class App extends React.Component{
                 this.setState({
                     currentMoney: this.state.currentMoney + 1
                 });
-                if(this.state.currentMoney == 10){
+                if(this.state.currentMoney == 11){
                     this.setState({
-                        currentMoney: 9
+                        currentMoney: 10
                     })
                 }
                 this.getQuestion();
             break;
             case "Incorrect":
                 this.setState({
-                    currentMoney: 1
+                    currentMoney: 0
                 });
                 this.getQuestion();
             break;
@@ -106,6 +106,9 @@ class App extends React.Component{
         var moneyToBank;
         // eslint-disable-next-line default-case
         switch(bankedMoney){
+            case 0:
+                moneyToBank = 0;
+                break;
             case 1:
                 moneyToBank = 20;
                 break;
@@ -136,7 +139,7 @@ class App extends React.Component{
         }
         this.setState({
             bankAmount: this.state.bankAmount + moneyToBank,
-            currentMoney: 1
+            currentMoney: 0
         })
     }
 

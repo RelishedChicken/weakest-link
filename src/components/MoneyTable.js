@@ -14,6 +14,7 @@ class MoneyTable extends React.Component{
                 <div id="money100" className={`banner ${this.props.currentMoney===3 ? "moneyPointHighlight":"moneyPoint"}`}><p>£100</p></div>
                 <div id="money50" className={`banner ${this.props.currentMoney===2 ? "moneyPointHighlight":"moneyPoint"}`}><p>£50</p></div>
                 <div id="money20" className={`banner ${this.props.currentMoney===1 ? "moneyPointHighlight":"moneyPoint"}`}><p>£20</p></div>        
+                <div id="money0" className={`banner ${this.props.currentMoney===0 ? "moneyPointHighlight":"moneyPoint"}`}><p>£0</p></div>        
             </div>
         )
     }
