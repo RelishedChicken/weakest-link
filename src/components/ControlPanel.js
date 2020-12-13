@@ -9,10 +9,20 @@ class ControlPanel extends React.Component{
                     <h2>{this.props.question}</h2>
                 </div>
                 <div hidden={this.props.roundEnded} className="answerContainer">
-                    <h3>Answers: {this.props.answers}</h3>
-                </div>
-                <div hidden={this.props.roundEnded} className="answerContainer">
-                    <h3>Correct Answer: {this.props.correctAnswer}</h3>
+                    <div className="answersArea">
+                        <div className="answerBox">
+                            <p>{this.props.answers[0]}</p>
+                        </div>
+                        <div className="answerBox">
+                            <p>{this.props.answers[1]}</p>
+                        </div>
+                        <div className="answerBox">
+                            <p>{this.props.answers[2]}</p>
+                        </div>
+                        <div className="answerBox">
+                            <p>{this.props.answers[3]}</p>
+                        </div>
+                    </div>
                 </div>
                 <div hidden={this.props.roundEnded} className="buttonContainer">
                     <button onClick={this.props.roundControl} className="correct">Correct</button>

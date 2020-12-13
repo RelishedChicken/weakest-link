@@ -44,7 +44,7 @@ class App extends React.Component{
         var qData;
         var cats = ["9"];
         var chosenCat = cats[Math.floor(Math.random() * cats.length)];
-        fetch("https://opentdb.com/api.php?amount=1&type=multiple&category="+chosenCat).then(res => res.json()).then((jsonData) => {
+        fetch("https://opentdb.com/api.php?amount=1&type=multiple").then(res => res.json()).then((jsonData) => {
             qData = jsonData.results[0];
             var incorrectAnswers = qData.incorrect_answers.map(e=>this.decode(e));
             var allAnswers = incorrectAnswers;
@@ -55,16 +55,15 @@ class App extends React.Component{
 
             allAnswers = this.shuffleArray(allAnswers);
 
-            var answersString = "";
+            console.clear();
+            console.log(this.decode(qData.correct_answer));
 
-            for(var i=0;i<allAnswers.length;i++){
-                answersString+=allAnswers[i]+", "
-            }
+            
 
             this.setState({
                 question: this.decode(qData.question),
                 correctAnswer: this.decode(qData.correct_answer),
-                answers: answersString
+                answers: allAnswers
             })
         })
     }
@@ -77,12 +76,12 @@ class App extends React.Component{
                 this.setState({
                     currentMoney: this.state.currentMoney + 1
                 });
-                if(this.state.currentMoney == 11){
-                    this.setState({
-                        currentMoney: 10
-                    })
+                if(this.state.currentMoney == 9){
+                    this.endRound();
+                    this.bankMoney(this.state.currentMoney);
+                }else{
+                    this.getQuestion();
                 }
-                this.getQuestion();
             break;
             case "Incorrect":
                 this.setState({
