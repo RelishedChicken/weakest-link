@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/weakest-link/static/css/main.5e00226c.chunk.css",
-    "main.js": "/weakest-link/static/js/main.9555a125.chunk.js",
-    "main.js.map": "/weakest-link/static/js/main.9555a125.chunk.js.map",
+    "main.css": "/weakest-link/static/css/main.d2ee1eeb.chunk.css",
+    "main.js": "/weakest-link/static/js/main.5f27a79c.chunk.js",
+    "main.js.map": "/weakest-link/static/js/main.5f27a79c.chunk.js.map",
     "runtime-main.js": "/weakest-link/static/js/runtime-main.f9904b58.js",
     "runtime-main.js.map": "/weakest-link/static/js/runtime-main.f9904b58.js.map",
     "static/js/2.1f876437.chunk.js": "/weakest-link/static/js/2.1f876437.chunk.js",
     "static/js/2.1f876437.chunk.js.map": "/weakest-link/static/js/2.1f876437.chunk.js.map",
     "index.html": "/weakest-link/index.html",
-    "static/css/main.5e00226c.chunk.css.map": "/weakest-link/static/css/main.5e00226c.chunk.css.map",
+    "static/css/main.d2ee1eeb.chunk.css.map": "/weakest-link/static/css/main.d2ee1eeb.chunk.css.map",
     "static/js/2.1f876437.chunk.js.LICENSE.txt": "/weakest-link/static/js/2.1f876437.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f9904b58.js",
     "static/js/2.1f876437.chunk.js",
-    "static/css/main.5e00226c.chunk.css",
-    "static/js/main.9555a125.chunk.js"
+    "static/css/main.d2ee1eeb.chunk.css",
+    "static/js/main.5f27a79c.chunk.js"
   ]
 }
